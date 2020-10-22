@@ -33,17 +33,17 @@ if(level == 0){
     var numBombe = 16;
     var maxBombe = 100;
     var minBombe = 1;
-    console.log("livello 0");
+    console.log("Livello 0");
 } else if (level == 1) {
     var numBombe = 16;
     var maxBombe = 80;
     var minBombe = 1;
-    console.log("livello 1");
+    console.log("Livello 1");
 }else{
     var numBombe = 16;
     var maxBombe = 50;
     var minBombe = 1;
-    console.log("livello 2");
+    console.log("Livello 2");
 }
 
 // Creo degli array e delle variabili di supporto
