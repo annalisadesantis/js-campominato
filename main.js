@@ -29,26 +29,22 @@ do{
 }while (!(level <= 2 && level >= 0));
 
 // Creo un if per modificare solo i valori delle varibili in base alla scelta fatta dall'utente
-if(level == 0){
-    var numBombe = 16;
+if(level == 0){    
     var maxBombe = 100;
-    var minBombe = 1;
     console.log("Livello 0");
 } else if (level == 1) {
-    var numBombe = 16;
     var maxBombe = 80;
-    var minBombe = 1;
     console.log("Livello 1");
 }else{
-    var numBombe = 16;
     var maxBombe = 50;
-    var minBombe = 1;
     console.log("Livello 2");
 }
 
 // Creo degli array e delle variabili di supporto
 var lista_mine = [];
 var lista_utente = [];
+var numBombe = 16;
+var minBombe = 1;
 var maxPoint = maxBombe - numBombe;
 
 // comunico all'utente il livello scelto
@@ -91,7 +87,7 @@ do{
         alert("Hai perso! " + " Hai totalizzato: " + lista_utente.length + " punti ");
 
     // Verifico se il numero utente è già presente nell'array utente
-    }else if (lista_utente.includes(numero_utente) == false) {
+    }else if (lista_utente.includes(numero_utente) == false && numero_utente <= maxBombe && numero_utente >= minBombe){
 
         lista_utente.push(numero_utente);
 
