@@ -54,9 +54,9 @@ var maxPoint = maxBombe - numBombe;
 // comunico all'utente il livello scelto
 console.log("Hai scelto il livello " + level + " ! " + " Hai a disposizione " + maxPoint + " tentativi.");
 
-// Il computer deve generare 16 numeri casuali tra 1 e 100.
+// Il computer deve generare 16 numeri casuali tra 1 e maxBombe.
 while (lista_mine.length < numBombe){
-    var numeri_random = Math.floor(Math.random() * 100) + 1;
+    var numeri_random = Math.floor(Math.random() * maxBombe) + 1;
 
     // controllo se il numero generato è già presente dentro l'array
     if (lista_mine.includes(numeri_random) == false ){
@@ -79,7 +79,7 @@ do{
         alert("Inserisci un numero");
     }
 
-    // Verifico se il numero inserito dall'utente è tra 1 e 100
+    // Verifico se il numero inserito dall'utente è tra 1 e maxBombe
     if(!(numero_utente <= maxBombe && numero_utente >= minBombe)){
         alert("Inserisci un numero da 1 a 100");
     }
