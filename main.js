@@ -15,13 +15,44 @@
 // Con difficoltà 0=> tra 1 e 100, con difficoltà 1 => tra 1 e 80, con
 // difficoltà 2=> tra 1 e 50
 
+// Creo un ciclo per richiedere all'utente il livello del gioco
+do{
+    var level = parseInt(prompt("Inserisci il livello di difficoltà del gioco. Digita: 0 per il livello principiante. Digita: 1 per il livello intermedio. Digita: 2 per il livello avanzato."));
+
+    if(isNaN (level)){
+        alert("Inserisci un numero");
+    }
+
+    if(!(level <= 2 && level >= 0)){
+        alert("Inserisci il livello da 0 a 2");
+    }
+}while (!(level <= 2 && level >= 0));
+
+// Creo un if per modificare solo i valori delle varibili in base alla scelta fatta dall'utente
+if(level == 0){
+    var numBombe = 16;
+    var maxBombe = 100;
+    var minBombe = 1;
+    console.log("livello 0");
+} else if (level == 1) {
+    var numBombe = 16;
+    var maxBombe = 80;
+    var minBombe = 1;
+    console.log("livello 1");
+}else{
+    var numBombe = 16;
+    var maxBombe = 50;
+    var minBombe = 1;
+    console.log("livello 2");
+}
+
 // Creo degli array e delle variabili di supporto
 var lista_mine = [];
 var lista_utente = [];
-var numBombe = 16;
-var maxBombe = 100;
-var minBombe = 1;
 var maxPoint = maxBombe - numBombe;
+
+// comunico all'utente il livello scelto
+console.log("Hai scelto il livello " + level + " ! " + " Hai a disposizione " + maxPoint + " tentativi.");
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 while (lista_mine.length < numBombe){
@@ -41,7 +72,7 @@ var bomba_trovata = false;
 
 do{
     // Chiedo il numero all'utente
-    var numero_utente = parseInt(prompt("Inserisci un numero da 1 a 100"));
+    var numero_utente = parseInt(prompt("Inserisci un numero da " + minBombe + " a " + maxBombe));
 
     // Verifico se il valore inserito è un numero o no
     if(isNaN (numero_utente)){
