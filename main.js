@@ -29,7 +29,7 @@ do{
 }while (!(level <= 2 && level >= 0));
 
 // Creo un if per modificare solo i valori delle varibili in base alla scelta fatta dall'utente
-if(level == 0){    
+if(level == 0){
     var maxBombe = 100;
     console.log("Livello 0");
 } else if (level == 1) {
@@ -71,29 +71,26 @@ do{
     var numero_utente = parseInt(prompt("Inserisci un numero da " + minBombe + " a " + maxBombe));
 
     // Verifico se il valore inserito è un numero o no
-    if(isNaN (numero_utente)){
-        alert("Inserisci un numero");
-    }
+    if(isNaN (numero_utente) == false && numero_utente >= minBombe && numero_utente <= maxBombe){
 
-    // Verifico se il numero inserito dall'utente è tra 1 e maxBombe
-    if(!(numero_utente <= maxBombe && numero_utente >= minBombe)){
-        alert("Inserisci un numero da 1 a 100");
-    }
+        // Verifico se il numero utente è già presente nell'array mine
+        if (lista_mine.includes(numero_utente) == true) {
 
-    // Verifico se il numero utente è già presente nell'array mine
-    if (lista_mine.includes(numero_utente) == true) {
+            bomba_trovata = true;
+            alert("Hai perso! " + " Hai totalizzato: " + lista_utente.length + " punti ");
 
-        bomba_trovata = true;
-        alert("Hai perso! " + " Hai totalizzato: " + lista_utente.length + " punti ");
+        // Verifico se il numero utente è già presente nell'array utente
+        }else if (lista_utente.includes(numero_utente) == false){
 
-    // Verifico se il numero utente è già presente nell'array utente
-    }else if (lista_utente.includes(numero_utente) == false && numero_utente <= maxBombe && numero_utente >= minBombe){
+            lista_utente.push(numero_utente);
+            alert("Bravo hai schivato la mina. Prova ancora!");
 
-        lista_utente.push(numero_utente);
-
+        }else{
+            // Creo un alert per informare l'utente che l'ultimo numero inserito lo avevo già inserito
+            alert("Questo numero lo avevi già inserito");
+        }
     }else{
-        // Creo un alert per informare l'utente che l'ultimo numero inserito lo avevo già inserito
-        alert("Questo numero lo avevi già inserito");
+        alert("Inserisci un numero valido");
     }
 
     // Creiamo la condizione per restare nel ciclo
