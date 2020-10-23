@@ -19,7 +19,7 @@
 do{
     var level = parseInt(prompt("Inserisci il livello di difficoltà del gioco. Digita: 0 per il livello principiante. Digita: 1 per il livello intermedio. Digita: 2 per il livello avanzato."));
 
-    if(isNaN (level){
+    if(isNaN (level)){
         alert("Inserisci un numero");
     }
 
