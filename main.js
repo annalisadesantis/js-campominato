@@ -19,13 +19,10 @@
 do{
     var level = parseInt(prompt("Inserisci il livello di difficoltà del gioco. Digita: 0 per il livello principiante. Digita: 1 per il livello intermedio. Digita: 2 per il livello avanzato."));
 
-    if(isNaN (level)){
+    if(isNaN (level){
         alert("Inserisci un numero");
     }
 
-    if(!(level <= 2 && level >= 0)){
-        alert("Inserisci il livello da 0 a 2");
-    }
 }while (!(level <= 2 && level >= 0));
 
 // Creo un if per modificare solo i valori delle varibili in base alla scelta fatta dall'utente
